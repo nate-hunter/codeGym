@@ -12,6 +12,7 @@ target/
 *.class
 *.info
 *.properties
+*.png
 
 /1.JavaSyntax/
 /2.JavaCore/

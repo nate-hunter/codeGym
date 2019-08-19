@@ -59,7 +59,7 @@ public class Solution {
         int max = 0;
 
         //add strings to the list,
-        for (int i = 0; i < strings.size(); i++) {
+        for (int i = 0; i < 5; i++) {
             strings.add(reader.readLine());
         }
 

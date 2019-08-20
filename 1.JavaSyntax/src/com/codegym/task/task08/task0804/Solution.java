@@ -26,6 +26,8 @@ public class Solution {
     }
 
     public static void printKeys(Map<String, String> map) {
-        //write your code here
+        for ( String s : map.keySet() ){
+            System.out.println(s);
+        }
     }
 }

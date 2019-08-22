@@ -56,7 +56,30 @@ EXAMPLE:
        if(itr.next() >= 10)
           itr.remove();
     ```
+    
+  ANOTHER EXAMPLE:
+    
+    Iterator<Map.Entry<String, Integer>> itr = map.entrySet().iterator();
+  
+    while (itr.hasNext()) {
+        Map.Entry<String, Integer> entry = itr.next();
+        
+        int salary = entry.getValue();
+  
+        if (salary < 500){
+            System.out.println("    SALARY < 500 || " + entry.getKey() + ": " + salary);
+            itr.remove();
+        }
+    }
+    
 
  */
  
+ # Lamdas
+   To remove a value from a set, instead of iterating, you can just use lambdas:
+   YourSet.removeIf(x -> x < 0);
  
+   In this example, it removes everything that is less than zero.
+ 
+   And to iterate through every element of a map, you can just:
+   copyMap.forEach((key,value) -> {        });

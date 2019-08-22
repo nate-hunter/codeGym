@@ -85,3 +85,82 @@ public class NoRepeatValues {
     }
 }
 
+/*
+# FROM COMMENTS:
+
+## USES RECURSION:
+public static void removeFirstNameDuplicates(Map<String, String> map) {
+    ArrayList<String> test = new ArrayList<>();
+
+    for(Map.Entry<String, String> pair : map.entrySet()){
+        if(!test.contains(pair.getValue())) test.add(pair.getValue());
+        else{
+            removeItemFromMapByValue(map, pair.getValue());
+            removeFirstNameDuplicates(map);
+            break;
+        }
+    }
+}
+
+## EXPLANATION:
+It is a recursive function ( ill post a link below). Read my posts below detailing how the original
+poster was iterating through a collection while making changes to it (removing items to be specific).
+
+Basically my function, by calling itself with 'map' after an item is removed, starts the iterating
+process over and avoids iterating over a collection while removing from that same collection. This
+works because collections are passed by reference which means that changes in a function will change
+value that is being passed in, unlike with primitives (ill post an example). The function will hold
+at line 8 each time until the function call is returned. The last level will just reach the end
+without the 'else' block being activated, then when returned up, the next line breaks each level all
+the way back until the code reaches main. I'll try to illustrate that here:
+
+from main removeItems(map)
+  else block 1: removeItems()
+    else block 2: removeItems()
+     else block 3: removeItems()
+       no items removed level 4:
+     else block 3: break
+    else block 2: break
+  else block 1; break
+next line in main
+
+Recursive function link: https://introcs.cs.princeton.edu/java/23recursion/
+
+## ALSO:
+primitive change example, copy this into your IDE and run:
+
+public class Solution {
+    public static void main(String[] args) throws Exception {
+        int x = 5;
+        System.out.println("The value of x in main before function is: " + x);
+        addFive(x);
+        System.out.println("The value of x in main after function is: " + x);
+    }
+
+    static public void addFive(int x){
+        x = x+ 5;
+        System.out.println("The value of x in function is: " + x);
+    }
+}
+
+The function does not change the value of the variable x in the main, this is because x is a
+primitive and is not passed by reference. Change int to an int[] (which is not primitive), like
+below, and run code and see the difference:
+
+public class Solution {
+    public static void main(String[] args) throws Exception {
+        int[] x = {5,2};
+        System.out.println("The values of x in main before function are: " + Arrays.toString(x));
+        addFive(x);
+        System.out.println("The values of x in main after function are: " + Arrays.toString(x));
+    }
+
+    static public void addFive(int[] x){
+        for(int i = 0; i < x.length; i++) x[i] = x[i] + 5;
+        System.out.println("The values of x in function are: " + Arrays.toString(x));
+    }
+}
+
+
+ */
+

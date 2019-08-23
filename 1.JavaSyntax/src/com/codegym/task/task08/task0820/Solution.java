@@ -15,9 +15,12 @@ public class Solution {
         Set<Dog> dogs = createDogs();
 
         Set<Object> pets = join(cats, dogs);
+
         printPets(pets);
         System.out.println("    PETS SIZE: " + pets.size());
+
         removeCats(pets, cats);
+
         printPets(pets);
         System.out.println("    PETS SIZE: " + pets.size());
 
@@ -47,7 +50,7 @@ public class Solution {
         //write your code here
         Set<Object> pets = new HashSet<>(cats);
         pets.addAll(dogs);
-        System.out.println("JOINED PETS: " + pets.size());
+        System.out.println("    JOINED PETS: " + pets.size());
         return pets;
     }
 
@@ -55,22 +58,6 @@ public class Solution {
         //write your code here
         pets.removeAll(cats);
 
-//        Iterator<Object> itr = pets.iterator();
-//        System.out.println("    REMOVE CATS METHOD:");
-////        System.out.println("    CATS OBJ: " + cats);
-//
-//        if (pets.containsAll(cats)){
-//            System.out.println("-PURRRR-");
-//        }
-//
-//        while (itr.hasNext()){
-//            Object obj = itr.next();
-//
-//            if (pets.contains(cats)){
-//                System.out.println("Purr");
-//            }
-//
-//        }
     }
 
     public static void printPets(Set<Object> pets) {

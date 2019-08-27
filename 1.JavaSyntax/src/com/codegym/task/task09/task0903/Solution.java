@@ -1,11 +1,8 @@
-package com.codegym.task.task09.task0902;
+package com.codegym.task.task09.task0903;
 
 /* 
-Stack trace revisited
-    StackTraceElement Array:
-    Index 0 = StackTrace
-    Index 1 = current method
-    Index 2 = invoking method
+Who called me?
+
 */
 
 public class Solution {
@@ -13,36 +10,34 @@ public class Solution {
         method1();
     }
 
-    public static String method1() {
+    public static int method1() {
         method2();
 
         StackTraceElement[] elements = Thread.currentThread().getStackTrace();
-        return elements[2].getMethodName();
+        return elements[2].getLineNumber();
     }
 
-    public static String method2() {
+    public static int method2() {
         method3();
 
         StackTraceElement[] elements = Thread.currentThread().getStackTrace();
-        return elements[2].getMethodName();
+        return elements[2].getLineNumber();
     }
 
-    public static String method3() {
+    public static int method3() {
         method4();
-
         StackTraceElement[] elements = Thread.currentThread().getStackTrace();
-        return elements[2].getMethodName();
+        return elements[2].getLineNumber();
     }
 
-    public static String method4() {
+    public static int method4() {
         method5();
-
         StackTraceElement[] elements = Thread.currentThread().getStackTrace();
-        return elements[2].getMethodName();
+        return elements[2].getLineNumber();
     }
 
-    public static String method5() {
+    public static int method5() {
         StackTraceElement[] elements = Thread.currentThread().getStackTrace();
-        return elements[2].getMethodName();
+        return elements[2].getLineNumber();
     }
 }

@@ -10,11 +10,16 @@ Exceptions. Just exceptions.
 
 public class Solution {
     public static void main(String[] args) throws Exception {
-        //write your code here
+        try {
+            method1();
+        }
+        catch (NullPointerException e){
+            System.out.println(e);
+        }
+        catch (FileNotFoundException e){
+            System.out.println(e);
+        }
 
-        method1();
-
-        //write your code here
     }
 
     public static void method1() throws NullPointerException, ArithmeticException, FileNotFoundException, URISyntaxException {

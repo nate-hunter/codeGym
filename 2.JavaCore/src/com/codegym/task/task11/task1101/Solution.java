@@ -13,7 +13,7 @@ public class Solution {
 
     }
 
-    public class Pegasus {
+    public class Pegasus extends Horse {
 
     }
 }

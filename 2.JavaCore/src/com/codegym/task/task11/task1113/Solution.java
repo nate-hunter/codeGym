@@ -13,15 +13,15 @@ public class Solution {
 
     }
 
-    public class Animal {
+    public class Animal extends Fish {
 
     }
 
-    public class Ape {
+    public class Ape extends Animal {
 
     }
 
-    public class Human {
+    public class Human extends Ape {
 
     }
 

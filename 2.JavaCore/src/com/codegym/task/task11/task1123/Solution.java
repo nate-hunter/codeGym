@@ -1,5 +1,8 @@
 package com.codegym.task.task11.task1123;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class Solution {
     public static void main(String[] args) throws Exception {
         int[] data = new int[]{1, 2, 3, 5, -2, -8, 0, 77, 5, 5};
@@ -17,7 +20,19 @@ public class Solution {
 
         //write your code here
 
-        return new Pair<Integer, Integer>(0, 0);
+//        System.out.println(Arrays.toString(array));
+
+        int[] arrayCopy = Arrays.copyOf(array,array.length);
+
+//        System.out.println(Arrays.toString(arrayCopy));
+        Arrays.sort(arrayCopy);
+//        System.out.println(Arrays.toString(arrayCopy));
+
+        int min = arrayCopy[0];
+        int max = arrayCopy[arrayCopy.length-1];
+
+
+        return new Pair<Integer, Integer>(min, max);
     }
 
 

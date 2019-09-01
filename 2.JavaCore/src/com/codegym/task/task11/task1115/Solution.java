@@ -13,15 +13,15 @@ public class Solution {
 
     }
 
-    public class Student {
+    public class Student extends Schoolboy {
 
     }
 
-    public class Employee {
+    public class Employee extends Student {
 
     }
 
-    public class Slave {
+    public class Slave extends Employee {
 
     }
 
